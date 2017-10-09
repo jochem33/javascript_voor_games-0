@@ -4,10 +4,12 @@ var autoheight = 20;
 var autoX = 1;
 var autoY = 140;
 var wielsize = 20;
-var autospeed = 1;
+var autospeedorgineel = 3;
+var autospeed = autospeedorgineel;
+var canvaswidth = 300;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(canvaswidth, 300);
   background(220);
 }
 
@@ -18,6 +20,12 @@ function draw() {
   autoX = autoX + autospeed;
   // lijn
   line(0, 170, 300, 170);
+  if (autoX < 0) {
+    autospeed = autospeedorgineel;
+  }
+  else if (autoX + autowidth > canvaswidth) {
+    autospeed = autospeedorgineel * -1;
+  }
 }
 
 
