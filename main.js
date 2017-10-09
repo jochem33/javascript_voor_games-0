@@ -1,7 +1,7 @@
 //variabelen maken:
 var autowidth = 100;
 var autoheight = 20;
-var autoX = 100;
+var autoX = 1;
 var autoY = 140;
 var wielsize = 20;
 var autospeed = 1;
