@@ -22,13 +22,15 @@ function draw() {
 
 
 function auto() {
-  fill(69, 193, 90);
+  fill(84,84,84);
   rect(autoX, autoY, autowidth, autoheight);
-  rect(autoX + 10, autoY - 20, autowidth - 20, autoheight);
+  ellipse(autoX + 40, autoY - 5, autowidth / 2, autoheight * 2);
+  rect(autoX + 30, autoY - 15, autowidth / 1.5, autoheight / 2);
   stroke(0);
   strokeWeight(2);
   fill(0, 255, 216);
-  ellipse(autoX + 20, 160, wielsize, wielsize);
-  ellipse(autoX + 80, 160, wielsize, wielsize);
+  ellipse(autoX + 10, 160, wielsize, wielsize);
+  ellipse(autoX + 50, 160, wielsize, wielsize);
+  ellipse(autoX + 90, 160, wielsize, wielsize);
   line(0, 170, 300, 170);
 }
