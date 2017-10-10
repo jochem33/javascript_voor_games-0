@@ -38,6 +38,4 @@ function bal() {
 
   balx = balx + xspeed;
   baly = baly + yspeed;
-  console.log(balx);
-  console.log(baly);
 }
