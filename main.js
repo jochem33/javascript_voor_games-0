@@ -2,8 +2,8 @@
 var canvaswidth = 800;
 var canvasheight = 600;
 var bal1;
-var xspeedorgineel = 10;
-var yspeedorgineel = 6;
+var xspeedorgineel = 40;
+var yspeedorgineel = 10;
 
 function setup() {
   createCanvas(canvaswidth, canvasheight);
@@ -35,16 +35,18 @@ function balfunc(x, y, straal, xspeed, yspeed) {
 
   this.beweeg = function() {
     if (this.x + this.straal / 2> canvaswidth) {
-      xspeed = xspeedorgineel * -1;
+      this.xspeed = xspeedorgineel * -1;
     }
     if (this.y + this.straal / 2 > canvasheight) {
-      yspeed = yspeedorgineel * -1;
+      this.yspeed = yspeedorgineel * -1;
     }
-    if (balx - balsize / 2 < 0) {
-      xspeed = xspeedorgineel;
+    if (this.x - this.straal / 2 < 0) {
+      this.xspeed = xspeedorgineel;
     }
-    if (baly - balsize / 2 < 0) {
-      yspeed = yspeedorgineel;
+    if (this.y - this.straal / 2 < 0) {
+      this.yspeed = yspeedorgineel;
     }
+    this.x += this.xspeed;
+    this.y += this.yspeed;
   }
 }
