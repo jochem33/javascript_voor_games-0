@@ -2,32 +2,38 @@
 var canvaswidth = 800;
 var canvasheight = 600;
 var bal1;
-var xspeedorgineel = 40;
-var yspeedorgineel = 10;
+var xspeedorgineel = 5;
+var yspeedorgineel = 1;
+var ballen = [];
+var aantalballen = 50;
 
 function setup() {
   createCanvas(canvaswidth, canvasheight);
   background(230);
-  balletje1 = new balfunc(40, 40, 20, 5, 3);
-  balletje1.x = 40;
-  balletje1.y = 40;
-  balletje1.straal = 20;
-  balletje1.xspeed = xspeedorgineel;
-  balletje1.yspeed = yspeedorgineel;
+  for (var i = 0; i < aantalballen; i++){
+    balletje1 = new Ball(5, 6, 10, xspeedorgineel, xspeedorgineel); //Maak een nieuwe instantie van Bal()
+    // balletje2 = new Ball(2, 21, 30, 2, 1); //Maak een nieuwe instantie van Bal()
+
+    ballen.push(balletje1); //Push voegt de bal aan het einde van het array toe
+  }
 }
 
 function draw() {
   background(200);
-  balletje1.teken();
-  balletje1.beweeg();
+
+  for (var i = 0; i < ballen.length; i++){
+    bal = ballen[i]; //Haal een bal uit het array
+    bal.teken();
+    bal.beweeg();
+  }
 }
 
-function balfunc(x, y, straal, xspeed, yspeed) {
-  this.x;
-  this.y;
-  this.straal;
-  this.xspeed;
-  this.yspeed;
+function Ball(_x, _y, _straal, _xspeed, _yspeed) {
+  this.x = _x;
+  this.y = _y;
+  this.straal = _straal;
+  this.xspeed = _xspeed;
+  this.yspeed = _yspeed;
 
   this.teken = function() {
     ellipse(this.x, this.y, this.straal, this.straal)
