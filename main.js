@@ -11,7 +11,7 @@ function setup() {
   createCanvas(canvaswidth, canvasheight);
   background(230);
   for (var i = 0; i < aantalballen; i++){
-    balletje1 = new Ball(5, 6, 10, xspeedorgineel, xspeedorgineel); //Maak een nieuwe instantie van Bal()
+    balletje1 = new Ball(20, 6, 10, i * xspeedorgineel, yspeedorgineel); //Maak een nieuwe instantie van Bal()
     // balletje2 = new Ball(2, 21, 30, 2, 1); //Maak een nieuwe instantie van Bal()
 
     ballen.push(balletje1); //Push voegt de bal aan het einde van het array toe
@@ -36,7 +36,11 @@ function Ball(_x, _y, _straal, _xspeed, _yspeed) {
   this.yspeed = _yspeed;
 
   this.teken = function() {
-    ellipse(this.x, this.y, this.straal, this.straal)
+    this.cr = Math.floor(Math.random() * 255);
+    this.cg = Math.floor(Math.random() * 255);
+    this.cb = Math.floor(Math.random() * 255);
+    fill(this.cr, this.rg, this.rb);
+    ellipse(this.x, this.y, this.straal, this.straal);
   }
 
   this.beweeg = function() {
