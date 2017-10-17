@@ -9,7 +9,7 @@ var aantalballen = 1;
 var balstraal = 40;
 
 function setup() {
-  frameRate(25)
+  //frameRate(25)
   createCanvas(canvaswidth, canvasheight);
   background(230);
   for (var i = 0; i < aantalballen; i++){
